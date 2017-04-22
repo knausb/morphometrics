@@ -10,13 +10,7 @@ title: "How many groups of samples are in my data"
 ### Tree methods
 
 
-## Optimization methods
-
-### Discriminant analysis
-
-
-### Classification trees
-
+## Hypothesis testing
 
 
 # References

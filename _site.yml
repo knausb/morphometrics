@@ -23,6 +23,12 @@ navbar:
         - text: "How many groups of samples are in my data?"
 #        - text: "Page A"
           href: groups.html
+    - text: "Differentiation"
+      icon: fa-group
+      menu:
+        - text: "How to differentiate among groups of samples in my data?"
+#        - text: "Page A"
+          href: differentiation.html
 
 output:
   html_document:

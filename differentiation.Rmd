@@ -1,0 +1,17 @@
+---
+title: "Differentiation among groups of samples"
+---
+
+## Optimization methods
+
+
+### Discriminant analysis
+
+
+### Classification trees
+
+
+
+# References
+
+
