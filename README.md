@@ -1,3 +1,3 @@
 # morphometrics
-Morphometric analyses of plants
+Morphometric analysis of plants
 
