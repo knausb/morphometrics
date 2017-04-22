@@ -1,0 +1,14 @@
+---
+title: "Plant morphometrics"
+---
+
+Morphometrics is the quantitative study of morphology.
+The purpose of this document is to provide examples of morphometric analyses of plant based data sets using R.
+The organization of these analyses is intended to be based on questions a researcher may have.
+This is an attempt to combine the research questions an individual or team may have with existing statistical analyses that attempt to address these questions.
+
+
+Through time I hope to populate these pages with a fairly thorough set of examples.
+
+
+

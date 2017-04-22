@@ -1,0 +1,35 @@
+name: "Morphometrics"
+output_dir: .
+navbar:
+#  title: "My Website"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Morphometric questions"
+      href: morph_q.html
+    - text: "Data sets"
+      icon: fa-database
+      menu:
+        - text: "Anderson's Irises"
+          href: ea_iris.html
+    - text: "Data sanitation"
+      icon: glyphicon-cloud
+      menu:
+        - text: "Data sanitation"
+          href: data_sanitation.html
+    - text: "Groups"
+      icon: fa-group
+      menu:
+        - text: "How many groups of samples are in my data?"
+#        - text: "Page A"
+          href: groups.html
+
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    theme: yeti
+    highlight: tango
+    include:
+      after_body: footer.html
+    css: styles.css

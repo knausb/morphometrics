@@ -1,0 +1,58 @@
+---
+title: "Edgar Anderson's Irises"
+bibliography: bibliography.bib
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.align = "center")
+knitr::opts_chunk$set(fig.height = 4)
+knitr::opts_chunk$set(fig.width = 10)
+```
+
+
+
+This data set consistst of four continuous characters collected for three species of *Iris*.
+The data were assembled by Anderson [-@anderson1935irises] and famously analysed by Fisher [-@fisher1936use].
+It is a nice dataset because it is reasonably small.
+This makes it easy to visualize.
+It also makes it a good daata set when trying to learn new analyses, particularly when the data set intende to be analysed is much larger.
+It is also a part of R so most intallations should have it.
+It can be loaded as follows.
+
+
+```{r}
+data("iris")
+```
+
+
+More information can be found using `?iris`.
+
+
+We can visualize this data using histograms.
+
+
+```{r}
+library(ggplot2)
+library(reshape2)
+iris2 <- melt(iris)
+
+p <- ggplot(iris2, aes(x=value, fill = Species))
+p <- p + geom_histogram(binwidth = 0.2, alpha=.5)
+p <- p + facet_grid(. ~ variable, scales = "free")
+p <- p + xlab("Length")
+p <- p + ylab("Count")
+p <- p + theme_bw()
+```
+
+
+
+```{r}
+p
+```
+
+
+
+# References
+
