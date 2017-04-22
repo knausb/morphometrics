@@ -1,7 +1,23 @@
 ---
-title: "About This Website"
+title: "How many groups of samples are in my data"
 ---
 
-More about this website.
 
+## Exploratory methods
+
+### Ordination
+
+### Tree methods
+
+
+## Optimization methods
+
+### Discriminant analysis
+
+
+### Classification trees
+
+
+
+# References
 
