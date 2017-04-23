@@ -1,0 +1,51 @@
+---
+title: "Principle components analysis"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.align = "center")
+knitr::opts_chunk$set(fig.height = 4)
+knitr::opts_chunk$set(fig.width = 10)
+```
+
+
+
+?princomp
+
+
+
+```{r}
+data(iris)
+
+# log transform 
+log.ir <- log(iris[, 1:4])
+ir.species <- iris[, 5]
+ 
+# apply PCA - scale. = TRUE is highly 
+# advisable, but default is FALSE. 
+ir.pca <- prcomp(log.ir,
+                 center = TRUE,
+                 scale. = TRUE) 
+
+```
+
+
+
+```{r, fig.width=4}
+# plot method
+plot(ir.pca, type = "l")
+```
+
+
+```{r, fig.height=8}
+biplot(ir.pca)
+
+```
+
+
+## Links
+
+https://www.r-bloggers.com/computing-and-visualizing-pca-in-r/    
+http://rcharlie.com/2017-04-13-Coachella/    

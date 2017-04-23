@@ -23,6 +23,8 @@ navbar:
         - text: "How many groups of samples are in my data?"
 #        - text: "Page A"
           href: groups.html
+        - text: "Principle components"
+          href: pca.html
     - text: "Differentiation"
       icon: fa-group
       menu:

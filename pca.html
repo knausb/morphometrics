@@ -11,7 +11,7 @@
 
 
 
-<title>Edgar Anderson’s Irises</title>
+<title>Principle components analysis</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -282,53 +282,37 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Edgar Anderson’s Irises</h1>
+<h1 class="title toc-ignore">Principle components analysis</h1>
 
 </div>
 
 <div id="TOC">
 <ul>
-<li><a href="#references">References</a></li>
+<li><a href="#links">Links</a></li>
 </ul>
 </div>
 
-<p>This data set consistst of four continuous characters collected for three species of <em>Iris</em>. The data were assembled by Anderson <span class="citation">(1935)</span> and famously analysed by Fisher <span class="citation">(1936)</span>. It is a nice dataset because it is reasonably small. This makes it easy to visualize. It also makes it a good daata set when trying to learn new analyses, particularly when the data set intende to be analysed is much larger. It is also a part of R so most intallations should have it. It can be loaded as follows.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">&quot;iris&quot;</span>)</code></pre></div>
-<p>More information can be found using <code>?iris</code>.</p>
-<p>We can visualize this data using histograms.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
-<span class="kw">library</span>(reshape2)
-iris2 &lt;-<span class="st"> </span><span class="kw">melt</span>(iris)</code></pre></div>
-<pre><code>## Using Species as id variables</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(iris2, <span class="kw">aes</span>(<span class="dt">x=</span>value, <span class="dt">fill =</span> Species))
-p &lt;-<span class="st"> </span>p +<span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">0.2</span>, <span class="dt">alpha=</span>.<span class="dv">5</span>)
-p &lt;-<span class="st"> </span>p +<span class="st"> </span><span class="kw">facet_grid</span>(. ~<span class="st"> </span>variable, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>)
-p &lt;-<span class="st"> </span>p +<span class="st"> </span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span><span class="kw">c</span>(<span class="st">&quot;#66c2a5&quot;</span>, <span class="st">&quot;#fc8d62&quot;</span>, <span class="st">&quot;#8da0cb&quot;</span>))
-p &lt;-<span class="st"> </span>p +<span class="st"> </span><span class="kw">xlab</span>(<span class="st">&quot;Length&quot;</span>)
-p &lt;-<span class="st"> </span>p +<span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Count&quot;</span>)
-p &lt;-<span class="st"> </span>p +<span class="st"> </span><span class="kw">theme_bw</span>()</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p</code></pre></div>
-<p><img src="ea_iris_files/figure-html/unnamed-chunk-3-1.png" width="960" style="display: block; margin: auto;" /></p>
-<p>An alternative perspective would be violin plots.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(iris2, <span class="kw">aes</span>(<span class="dt">x=</span>Species, <span class="dt">y=</span>value, <span class="dt">fill =</span> Species))
-p &lt;-<span class="st"> </span>p +<span class="st"> </span><span class="kw">geom_violin</span>()
-p &lt;-<span class="st"> </span>p +<span class="st"> </span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span><span class="kw">c</span>(<span class="st">&quot;#66c2a5&quot;</span>, <span class="st">&quot;#fc8d62&quot;</span>, <span class="st">&quot;#8da0cb&quot;</span>))
-p &lt;-<span class="st"> </span>p +<span class="st"> </span><span class="kw">facet_grid</span>(. ~<span class="st"> </span>variable)
-p &lt;-<span class="st"> </span>p +<span class="st"> </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>)
-p &lt;-<span class="st"> </span>p +<span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Length&quot;</span>)
-p &lt;-<span class="st"> </span>p +<span class="st"> </span><span class="kw">theme_bw</span>()</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p</code></pre></div>
-<p><img src="ea_iris_files/figure-html/unnamed-chunk-5-1.png" width="960" style="display: block; margin: auto;" /></p>
-<div id="references" class="section level1 unnumbered">
-<h1>References</h1>
-<div id="refs" class="references">
-<div id="ref-anderson1935irises">
-<p>Anderson, Edgar. 1935. “The Irises of the Gaspe Peninsula.” <em>Bulletin of the American Iris Society</em> 59: 2–5.</p>
-</div>
-<div id="ref-fisher1936use">
-<p>Fisher, Ronald A. 1936. “The Use of Multiple Measurements in Taxonomic Problems.” <em>Annals of Eugenics</em> 7 (2). Wiley Online Library: 179–88.</p>
-</div>
-</div>
+<p>?princomp</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(iris)
+
+<span class="co"># log transform </span>
+log.ir &lt;-<span class="st"> </span><span class="kw">log</span>(iris[, <span class="dv">1</span>:<span class="dv">4</span>])
+ir.species &lt;-<span class="st"> </span>iris[, <span class="dv">5</span>]
+ 
+<span class="co"># apply PCA - scale. = TRUE is highly </span>
+<span class="co"># advisable, but default is FALSE. </span>
+ir.pca &lt;-<span class="st"> </span><span class="kw">prcomp</span>(log.ir,
+                 <span class="dt">center =</span> <span class="ot">TRUE</span>,
+                 <span class="dt">scale. =</span> <span class="ot">TRUE</span>) </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># plot method</span>
+<span class="kw">plot</span>(ir.pca, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>)</code></pre></div>
+<p><img src="pca_files/figure-html/unnamed-chunk-2-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">biplot</span>(ir.pca)</code></pre></div>
+<p><img src="pca_files/figure-html/unnamed-chunk-3-1.png" width="960" style="display: block; margin: auto;" /></p>
+<div id="links" class="section level2">
+<h2>Links</h2>
+<p><a href="https://www.r-bloggers.com/computing-and-visualizing-pca-in-r/" class="uri">https://www.r-bloggers.com/computing-and-visualizing-pca-in-r/</a><br />
+<a href="http://rcharlie.com/2017-04-13-Coachella/" class="uri">http://rcharlie.com/2017-04-13-Coachella/</a></p>
 </div>
 
 <center>

@@ -3,11 +3,30 @@ title: "Data sanitation"
 bibliography: bibliography.bib
 ---
 
-## Garbage in, roses out?
+
+## Quality assessment
+
 
 When we are presented with a dataset a first question is 'what is the quality of this data?'.
 Or perhaps more eloquently stated, 'garbage in, roses out' [@tabachnick2001using]?
 A first task associated with any data analysis is to assess the quality of the data.
+
+
+
+## Mitigating missingness
+
+
+
+## Imputation
+
+
+
+## Logarithmic transformation
+
+
+
+## Scaling and centering
+
 
 
 # References

@@ -41,6 +41,7 @@ iris2 <- melt(iris)
 p <- ggplot(iris2, aes(x=value, fill = Species))
 p <- p + geom_histogram(binwidth = 0.2, alpha=.5)
 p <- p + facet_grid(. ~ variable, scales = "free")
+p <- p + scale_fill_manual(values=c("#66c2a5", "#fc8d62", "#8da0cb"))
 p <- p + xlab("Length")
 p <- p + ylab("Count")
 p <- p + theme_bw()
@@ -52,6 +53,25 @@ p <- p + theme_bw()
 p
 ```
 
+
+An alternative perspective would be violin plots.
+
+
+```{r}
+p <- ggplot(iris2, aes(x=Species, y=value, fill = Species))
+p <- p + geom_violin()
+p <- p + scale_fill_manual(values=c("#66c2a5", "#fc8d62", "#8da0cb"))
+p <- p + facet_grid(. ~ variable)
+p <- p + xlab("")
+p <- p + ylab("Length")
+p <- p + theme_bw()
+
+```
+
+
+```{r}
+p
+```
 
 
 # References
