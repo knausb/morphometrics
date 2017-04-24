@@ -1,0 +1,48 @@
+---
+title: "K-means clustering"
+bibliography: bibliography.bib
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.align = "center")
+knitr::opts_chunk$set(fig.height = 4)
+knitr::opts_chunk$set(fig.width = 10)
+```
+
+
+[@james2013introduction; @islrblog]
+
+
+```{r}
+data(iris)
+head(iris)
+```
+
+
+```{r}
+# kmeans(iris[,1:4], centers = 2)
+myGroups <- 2:20
+myKmeans <- vector("list", length = length(myGroups) - 1)
+
+sapply(myGroups, function(x){ myKmeans[[x-1]] <<- kmeans(iris[,1:4], centers = x) })
+```
+
+
+```{r}
+plot(myGroups, unlist(lapply(myKmeans, function(x){x$tot.withinss})), ylab = "Winthin ggroup SS", type = 'b')
+```
+
+
+
+```{r}
+#myMat <- matrix(1, ncol = nrow(iris), nrow = 2)
+#barplot(myMat, col = c(myKmeans[[5-1]]$cluster, iris$Species), border = NA)
+```
+
+
+# References
+
+
+

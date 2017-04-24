@@ -25,6 +25,8 @@ navbar:
           href: groups.html
         - text: "Principle components"
           href: pca.html
+        - text: "K-means clustering"
+          href: kmeans.html
     - text: "Differentiation"
       icon: fa-group
       menu:
