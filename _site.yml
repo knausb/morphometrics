@@ -33,6 +33,8 @@ navbar:
         - text: "How to differentiate among groups of samples in my data?"
 #        - text: "Page A"
           href: differentiation.html
+        - text: "Classification trees"
+          href: class_tree.html
 
 output:
   html_document:

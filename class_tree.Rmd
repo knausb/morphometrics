@@ -1,0 +1,37 @@
+---
+title: "Classification tree"
+bibliography: bibliography.bib
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.align = "center")
+knitr::opts_chunk$set(fig.height = 4)
+knitr::opts_chunk$set(fig.width = 10)
+```
+
+
+[@james2013introduction]
+
+
+```{r}
+data("iris")
+head(iris)
+```
+
+
+```{r}
+library(tree)
+myTree <- tree(Species ~ ., data = iris)
+myTree
+summary(myTree)
+
+plot(myTree)
+#tile.tree(myTree)
+#predict.tree(myTree)
+```
+
+
+# References
+
